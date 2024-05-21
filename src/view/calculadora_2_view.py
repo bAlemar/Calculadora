@@ -1,22 +1,18 @@
-from typing import Dict
+
+from typing import Dict,List
 import os
 
-#    "Tipo_Calculadora":self.nome,
-                # "Entradas":self.entry_number,
-                # "Status":"Sucesso",
-                # "resultado":result,
-class Calculadora_1_Views:
-    
-    def calculadora_1_view(self):
+class Calculadora_2_Views:
+    def calculadora_2_view(self):
         message = """
-        Insira um número real
+        Insira uma lista de N números reais, separados por ,
         """
+        
         print(message)
-        real_number = input('Número: ')
-        return real_number
-    
-    
-    def calculadora_1_success(self,response:Dict):
+        list_numbers = input('Lista: ')
+        return list_numbers
+ 
+    def calculadora_2_success(self,response:Dict):
         self.__clear()
         message = f"""
         Cálculo feito com Sucesso!!!
@@ -33,7 +29,7 @@ class Calculadora_1_Views:
         return
 
 
-    def calculadora_1_error(self,error:str):
+    def calculadora_2_error(self,error:str):
         self.__clear()
         message = f"""
         Não foi possivel realizar esse cálculo.
