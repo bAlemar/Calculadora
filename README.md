@@ -25,7 +25,7 @@
 
 2. **Navegue até o diretório do repositório clonado:**
    ```bash
-   cd Arquitetura-MVC
+   cd Calculadora
 
 4. **Rodar Software**
    ```bash
