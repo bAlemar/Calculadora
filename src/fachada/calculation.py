@@ -18,5 +18,9 @@ class __Calculation:
         average_number = self.__np.average(numbers)
         return average_number
 
+    def standard_deviation(self,numbers:List):
+        sd_number = self.__np.std(numbers)
+        return sd_number
 
-calculation = __Calculation()
+    
+math_operations = __Calculation()
