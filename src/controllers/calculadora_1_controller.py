@@ -1,5 +1,5 @@
 import math
-from src.fachada.calculation import calculation
+from src.fachada.calculation import math_operations
 from typing import Dict, List
 # Recebe Numero Real
 # Divide em 3 partes iguais
@@ -9,22 +9,27 @@ from typing import Dict, List
 # Resultado final: Média dos 3 valores
 
 class Calculadora_1:
-    def __init__(self,number) -> None:
+    def __init__(self) -> None:
         # Comum calculations
-        self.entry_number = number
-        self.number = number//3
         self.nome = "Calculadora 1"
+        
 
     
-    def calculations(self) -> Dict:
+    def calculations(self,number:float) -> Dict:
         try:
+            number = float(number)
+            
+            self.entry_number = number
+
+            self.number = number//3
+            
             resultado_1 = Calculadora_1_parte_1(self.number).run()
             
             resultado_2 = Calculadora_1_parte_2(self.number).run()
 
             resultado_3 = self.number
             
-            result = calculation.average([resultado_1,resultado_2,resultado_3])
+            result = math_operations.average([resultado_1,resultado_2,resultado_3])
     
             return self.__format_response(result)
         
