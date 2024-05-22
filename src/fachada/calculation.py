@@ -22,5 +22,9 @@ class __Calculation:
         sd_number = self.__np.std(numbers)
         return sd_number
 
+    def variance(self,numbers:List):
+        variance_number = self.__np.var(numbers)
+        return variance_number
+
     
 math_operations = __Calculation()
