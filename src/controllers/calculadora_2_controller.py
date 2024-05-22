@@ -33,9 +33,9 @@ class Calculadora_2:
 class calculo:
     def __init__(self,list_numbers:List) -> None:
         self.list_numbers = list_numbers
-
-    def run(self) -> float:
         self.__fixing_list_number()
+    
+    def run(self) -> float:
         result = math_operations.standard_deviation(self.list_numbers)
         return 1/result
     
