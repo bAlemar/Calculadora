@@ -10,12 +10,30 @@ class Calculadora_2:
         try:
             self.entry_number = list_numbers
 
-            result = calculo(list_numbers).run()
-            
+            std = self.__calculo(list_numbers)
+
+            result = 1/std
+
             return self.__format_response(result)
         
         except Exception as e: 
             return {"success":False,"error":str(e)}
+
+
+    def __calculo(self):
+        list_numbers = self.__fixing_and_calcule_list_number(list_numbers)
+        std = math_operations.standard_deviation(list_numbers)
+        return std
+    
+
+    def __fixing_and_calcule_list_number(self,list_numbers) -> List:
+        list_numbers = list_numbers.split(',')
+        list_numbers = [self.__calculo_1(float(x.strip())) for x in list_numbers]
+
+    def __calculo_1(self,number:float)-> float:
+        number = number * 11
+        number = number**0.95
+        return number
 
 
     def __format_response(self,result:List) -> Dict:
