@@ -35,12 +35,12 @@ class Calculadora_1:
             return {"success":False,"error":str(e)}
 
 
-    def __calculadora_parte_1(number):
+    def __calculadora_parte_1(self,number):
         number = (number/4) + 7
         number = math.sqrt(number) * 0.257
         return number
     
-    def __calculadora_parte_2(number):
+    def __calculadora_parte_2(self,number):
         number = number ** 2.121
         number = (number / 5) + 1
         return number

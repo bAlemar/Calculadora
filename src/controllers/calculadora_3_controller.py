@@ -31,6 +31,7 @@ class Calculadora_3:
     def __fixing_list_number(self,list_numbers) -> List:
         list_numbers = list_numbers.split(',')
         list_numbers = [float(x.strip()) for x in list_numbers]
+        return list_numbers
 
     def __format_response(self,result:List) -> Dict:
         # Isso deveria ficar na view?

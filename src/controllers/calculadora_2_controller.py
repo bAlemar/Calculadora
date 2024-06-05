@@ -20,7 +20,7 @@ class Calculadora_2:
             return {"success":False,"error":str(e)}
 
 
-    def __calculo(self):
+    def __calculo(self,list_numbers):
         list_numbers = self.__fixing_and_calcule_list_number(list_numbers)
         std = math_operations.standard_deviation(list_numbers)
         return std
@@ -29,6 +29,7 @@ class Calculadora_2:
     def __fixing_and_calcule_list_number(self,list_numbers) -> List:
         list_numbers = list_numbers.split(',')
         list_numbers = [self.__calculo_1(float(x.strip())) for x in list_numbers]
+        return list_numbers
 
     def __calculo_1(self,number:float)-> float:
         number = number * 11
@@ -48,24 +49,24 @@ class Calculadora_2:
             }
         }
 
-class calculo:
-    def __init__(self,list_numbers:List) -> None:
-        self.list_numbers = list_numbers
-        self.__fixing_list_number()
+# class calculo:
+#     def __init__(self,list_numbers:List) -> None:
+#         self.list_numbers = list_numbers
+#         self.__fixing_list_number()
     
-    def run(self) -> float:
-        result = math_operations.standard_deviation(self.list_numbers)
-        return 1/result
+#     def run(self) -> float:
+#         result = math_operations.standard_deviation(self.list_numbers)
+#         return 1/result
     
-    def __calculo_1(self,number:float) -> float:
-        number = number * 11
-        number = number**0.95
+#     def __calculo_1(self,number:float) -> float:
+#         number = number * 11
+#         number = number**0.95
 
-        return number
+#         return number
     
-    def __fixing_list_number(self) -> List:
-        self.list_numbers = self.list_numbers.split(',')
-        self.list_numbers = [self.__calculo_1(float(x.strip())) for x in self.list_numbers]
+#     def __fixing_list_number(self) -> List:
+#         self.list_numbers = self.list_numbers.split(',')
+#         self.list_numbers = [self.__calculo_1(float(x.strip())) for x in self.list_numbers]
 
 
         
