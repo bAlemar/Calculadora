@@ -12,8 +12,6 @@ class Calculadora_1:
     def __init__(self) -> None:
         # Comum calculations
         self.nome = "Calculadora 1"
-        
-
     
     def calculations(self,number:float) -> Dict:
         try:
@@ -23,9 +21,9 @@ class Calculadora_1:
 
             self.number = number//3
             
-            resultado_1 = Calculadora_1_parte_1(self.number).run()
+            resultado_1 = self.__calculadora_parte_1(self.number)
             
-            resultado_2 = Calculadora_1_parte_2(self.number).run()
+            resultado_2 = self.__calculadora_parte_2(self.number)
 
             resultado_3 = self.number
             
@@ -37,6 +35,16 @@ class Calculadora_1:
             return {"success":False,"error":str(e)}
 
 
+    def __calculadora_parte_1(number):
+        number = (number/4) + 7
+        number = math.sqrt(number) * 0.257
+        return number
+    
+    def __calculadora_parte_2(number):
+        number = number ** 2.121
+        number = (number / 5) + 1
+        return number
+    
     def __format_response(self,result:List) -> Dict:
         # Isso deveria ficar na view?
         return {
@@ -51,33 +59,38 @@ class Calculadora_1:
 
 
 
-class Calculadora_1_parte_1:
-    def __init__(self,number) -> None:
-        self.number = number
+# Corrigir e botar esses classes como metódos privados dentro de Calculadora_1()
+# Processamento só em um método privado
 
-    def run(self):
-        self.__parte_1()
-        self.__parte_2()
-        return self.number
+# Nao vai alterando valor com self. isso da merda
+# class Calculadora_1_parte_1:
+#     def __init__(self,number) -> None:
+#         self.number = number
 
-    def __parte_1(self):
-        self.number = (self.number/4) + 7
-
-    def __parte_2(self):
-        self.number = math.sqrt(self.number) * 0.257
-
-
-class Calculadora_1_parte_2:
-    def __init__(self,number) -> None:
-        self.number = number
+#     def run(self):
+#         self.__parte_1()
+#         self.__parte_2()
+#         return self.number
     
-    def run(self):
-        self.__parte_1()
-        self.__parte_2()
-        return self.number
+#     # isso virará variável
+#     def __parte_1(self):
+#         self.number = (self.number/4) + 7
+
+#     def __parte_2(self):
+#         self.number = math.sqrt(self.number) * 0.257
+
+
+# class Calculadora_1_parte_2:
+#     def __init__(self,number) -> None:
+#         self.number = number
     
-    def __parte_1(self):
-        self.number = self.number ** 2.121
-    def __parte_2(self):
-        self.number = (self.number/5) + 1
+#     def run(self):
+#         self.__parte_1()
+#         self.__parte_2()
+#         return self.number
+    
+#     def __parte_1(self):
+#         self.number = self.number ** 2.121
+#     def __parte_2(self):
+#         self.number = (self.number/5) + 1
 
