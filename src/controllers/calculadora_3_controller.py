@@ -8,13 +8,11 @@ class Calculadora_3:
     def calculations(self,list_numbers:List) -> Dict:
         try:
             self.entry_number = list_numbers
-
             variance,standard_deviation = self.__calculo(self.entry_number)
             result = self.__compare_variance_std(variance,standard_deviation)
             self.variance = variance
             self.std = standard_deviation
             return self.__format_response(result)
-        
         except Exception as e: 
             return {"success":False,"error":str(e)}
     
@@ -48,21 +46,19 @@ class Calculadora_3:
             }
         }
 
+
 # Método público tipo constructor e lógica no método privado...
 # Deixar como métodos privados
 # class calculo:
 #     def __init__(self,list_numbers:List) -> None:
 #         self.list_numbers = list_numbers
 #         self.__fixing_list_number()
-    
 #     def run(self):
 #         return self.__calculo_1()
-
 #     def __calculo_1(self) -> Tuple[float,float]:
 #         variance  =  math_operations.variance(self.list_numbers)
 #         standard_deviation = math_operations.standard_deviation(self.list_numbers)
 #         return [variance,standard_deviation]
-
 #     def __fixing_list_number(self) -> List:
 #         self.list_numbers = self.list_numbers.split(',')
 #         self.list_numbers = [float(x.strip()) for x in self.list_numbers]
